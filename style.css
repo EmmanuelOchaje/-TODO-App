@@ -1,0 +1,15 @@
+* {
+  font-family: "Fredoka", sans-serif;
+}
+h1 {
+  font-weight: 550;
+}
+.container {
+  display: grid;
+  place-content: center;
+}
+.container .content {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2rem;
+}
