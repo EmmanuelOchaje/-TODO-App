@@ -13,3 +13,14 @@ h1 {
   border-radius: 10px;
   padding: 2rem;
 }
+input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+.add {
+  background: black;
+  color: white;
+  font-size: 1rem;
+  border: 1px solid transparent;
+}
