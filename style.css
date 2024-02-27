@@ -3,6 +3,7 @@
 }
 h1 {
   font-weight: 550;
+  text-align: center;
 }
 .container {
   display: grid;
@@ -12,15 +13,39 @@ h1 {
   border: 1px solid black;
   border-radius: 10px;
   padding: 2rem;
+  width: 100%;
 }
 input {
   border: 1px solid gray;
   border-radius: 5px;
   padding: 0.4rem;
 }
+.add-item {
+  width: 75%;
+}
 .add {
+  background: rgb(49, 212, 49);
+  color: white;
+  font-size: 1rem;
+  border: 1px solid transparent;
+}
+.delete {
   background: black;
   color: white;
   font-size: 1rem;
   border: 1px solid transparent;
+}
+.edit {
+  background: rgb(85, 85, 197);
+  color: white;
+  font-size: 1rem;
+  border: 1px solid transparent;
+}
+.indiv {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 0.5rem;
 }
