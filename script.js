@@ -4,8 +4,39 @@ const Add = document.querySelector('.add')
 const Delete = document.querySelector('.delete')
 const Edit = document.querySelector('.edit')
 const Para = document.querySelector('.para')
+const TextD = document.querySelector('.text')
 
-const AddFunc = function(value){
+const AddFunc = function(text){
+    let html = `
+    <div class="text">
+          <div class="indiv">
+            <div class="para">${text}</div>
+            <div class="btn">
+            </div>
+            </div>
+            `;
+            Content.insertAdjacentHTML('beforeend',html)
+          }
+         /*  <input type="button" class="delete" value="Delete" />
+          <input type="button" class="edit" value="Edit" /> */
+          
+Add.addEventListener('click', ()=>{
+    //preventDefault()
+    if(AddItem.value){
+        let cont =  AddItem.value
+        AddFunc(cont)
+        //Para.textContent = 
+        AddItem.value = ''
+    }
+})
+
+
+/* Edit.addEventListener('click', ()=>{
+    AddItem.value = Para.textContent
+    Para.textContent = ''
+})
+
+Delete.addEventListener('click', ()=>{
     let html = `
     <div class="text">
           <div class="indiv">
@@ -16,22 +47,5 @@ const AddFunc = function(value){
             </div>
     </div>
     `;
-    Content.insertAdjacentHTML('beforeend',html)
-}
-
-Add.addEventListener('click', ()=>{
-    //preventDefault()
-    if(AddItem.value){
-        let cont =  AddItem.value
-        AddFunc(cont)
-        //Para.textContent = 
-        AddItem.value = ''
-        console.log('Hey')
-    }
-})
-
-
-Edit.addEventListener('click', ()=>{
-    AddItem.value = Para.textContent
-    Para.textContent = ''
-})
+    Content.remove('beforeend', html)
+}) */
