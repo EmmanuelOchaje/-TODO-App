@@ -31,8 +31,9 @@ Add.addEventListener('click', ()=>{
 })
 
 
-/* Edit.addEventListener('click', ()=>{
-    AddItem.value = Para.textContent
+Edit.addEventListener('click', ()=>{
+  console.log('hey') 
+  AddItem.value = Para.textContent
     Para.textContent = ''
 })
 
@@ -48,4 +49,4 @@ Delete.addEventListener('click', ()=>{
     </div>
     `;
     Content.remove('beforeend', html)
-}) */
+}) 
