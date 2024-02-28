@@ -12,13 +12,13 @@ const AddFunc = function(text){
           <div class="indiv">
             <div class="para">${text}</div>
             <div class="btn">
+             <input type="button" class="delete" value="Delete" />
+             <input type="button" class="edit" value="Edit" />
             </div>
             </div>
             `;
             Content.insertAdjacentHTML('beforeend',html)
           }
-         /*  <input type="button" class="delete" value="Delete" />
-          <input type="button" class="edit" value="Edit" /> */
           
 Add.addEventListener('click', ()=>{
     //preventDefault()
