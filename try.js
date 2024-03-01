@@ -5,8 +5,6 @@ const Delete = document.querySelector(".delete");
 const Edit = document.querySelector(".edit");
 const Para = document.querySelector(".para");
 const TextD = document.querySelector(".text");
-//const dynamicID = "xdiv";
-const txtC = "text";
 
 function genRandomId() {
   let constants = ["a", "b", "c", "d", "e", "1", "2", "3", "4", "5"];
@@ -20,33 +18,39 @@ function genRandomId() {
   return randString;
 }
 
-const AddBtn = function (text) {
+const AddFunc = function (text) {
   const dynamicId = genRandomId();
 
-  html = `
-  <div class="text">
+  const onClickToDelete = (e) => {
+    const parentDiv = e.target.parentElement.parentElement.parentElement;
+    Content.removeChild(parentDiv);
+  };
+  let html = `
+    <div class="text">
           <div class="indiv">
             <div class="para">${text}</div>
             <div class="btn">
-              <input type="button" id="${dynamicId}" class="delete" value="Delete" />
-              <input type="button" class="edit" value="Edit" />
+             <button type="button" id="${dynamicId}" class="delete" value="Delete">Delete</button>
+             <input type="button" class="edit" value="Edit" />
             </div>
-          </div>
-    </div>
-    `;
+            </div>
+            `;
   Content.insertAdjacentHTML("beforeend", html);
-  const DeleteBtn = document.getElementById(dynamicId);
-  let DeleteBtnFunc = (e) => {
-    let parentDiv = e.target.parentElement.parentElement.parentElement;
-    Content.removeChild(parentDiv);
-  };
-  DeleteBtn.addEventListener("click", DeleteBtnFunc);
+
+  const button = document.getElementById(dynamicId);
+  if (button) {
+    button.addEventListener("click", (e) => onClickToDelete(e));
+  } else {
+    console.log("Button not exist!");
+  }
 };
 
 Add.addEventListener("click", () => {
+  //preventDefault()
   if (AddItem.value) {
-    let value = AddItem.value;
-    AddBtn(value);
+    let cont = AddItem.value;
+    AddFunc(cont);
+    //Para.textContent =
     AddItem.value = "";
   }
 });
