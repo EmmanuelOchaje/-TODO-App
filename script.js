@@ -20,6 +20,7 @@ function genRandomId() {
   return randString;
 }
 
+//s<input type="button" class="edit" value="Edit" />
 const AddBtn = function (text) {
   const dynamicId = genRandomId();
 
@@ -29,10 +30,9 @@ const AddBtn = function (text) {
             <div class="para">${text}</div>
             <div class="btn">
               <input type="button" id="${dynamicId}" class="delete" value="Delete" />
-              <input type="button" class="edit" value="Edit" />
-            </div>
-          </div>
-    </div>
+              </div>
+              </div>
+              </div>
     `;
   Content.insertAdjacentHTML("beforeend", html);
   const DeleteBtn = document.getElementById(dynamicId);
@@ -43,8 +43,15 @@ const AddBtn = function (text) {
   DeleteBtn.addEventListener("click", DeleteBtnFunc);
 };
 
-Add.addEventListener("click", () => {
-  if (AddItem.value) {
+document.addEventListener("keydown", (e) => {
+  if (AddItem.value && e.key === "Enter") {
+    let value = AddItem.value;
+    AddBtn(value);
+    AddItem.value = "";
+  }
+});
+Add.addEventListener("click", (e) => {
+  if (AddItem.value || e.key === "Enter") {
     let value = AddItem.value;
     AddBtn(value);
     AddItem.value = "";
